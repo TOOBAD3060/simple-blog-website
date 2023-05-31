@@ -1,12 +1,11 @@
-'use client'
 import React,{useState,useEffect} from 'react'
-import {db} from './firebase-config'
+import {db} from '../src/app/firebase-config'
 import {collection, getDocs} from 'firebase/firestore'
 
 
-import EachArticle from '../../pages/components/EachArticle'
-import Header from '../../pages/components/Header'
-import './globals.css'
+import EachArticle from './components/EachArticle'
+import Header from './components/Header'
+import '../src/app/globals.css'
 
 
 export default function Home() {
