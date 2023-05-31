@@ -20,12 +20,10 @@ export default function Home() {
         const data = await getDocs(blogsCollectionReference) 
         setBlogs(data.docs.map((doc)=> ({...doc.data(), id: doc.id,key: doc.id})))
      }
-    //  setBlogs(getblogs)
     getBlogs()
 
     
   },[])
-  console.log(blogs)
   return (
     <div className='container'>
       <Header />
