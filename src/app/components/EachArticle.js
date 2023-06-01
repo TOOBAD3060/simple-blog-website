@@ -1,25 +1,12 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import {db} from '../../src/app/firebase-config'
+import {db} from '../firebase-config'
 import {collection, getDocs,doc,deleteDoc} from 'firebase/firestore'
 
 
 const EachArticle = ({blogs}) => {
 
-  // const [blogs,setBlogs] = useState([]) 
-  // const blogsCollectionReference = collection(db,'allPosts')
-  // useEffect(()=> {
-  //    const getBlogs = async () => {
-  //       const data = await getDocs(blogsCollectionReference) 
-  //       setBlogs(data.docs.map((doc)=> ({...doc.data(), id: doc.id})))
-  //    }
-  //   //  setBlogs(getblogs)
-  //   getBlogs()
-
-    
-  // },[])
-  // console.log(blogs)
-  const deleteBlog = async (id) => {
+    const deleteBlog = async (id) => {
     const userDoc = doc(db, 'allPosts',id)
     
     await deleteDoc(userDoc)
@@ -28,9 +15,7 @@ const EachArticle = ({blogs}) => {
 
     location.href = '/'
   }
-  // const editBlog = () => {
-  //      location.href = `/blogs/edit/${id}`
-  // }
+ 
 return (
   //  <h1>Yes</h1>
     blogs.map((blog)=>{
@@ -43,7 +28,6 @@ return (
                   </p>
                    
                   <div className= 'btn'>
-                  {/* <button onClick={()=> location.href = `/blogs/edit/${id}` } className='edit'>Edit</button>  */}
                   <button onClick={()=> deleteBlog(id)}>Delete</button> 
                   </div>
             </article>          

@@ -3,8 +3,8 @@ import {db} from '../src/app/firebase-config'
 import {collection, getDocs} from 'firebase/firestore'
 
 
-import EachArticle from './components/EachArticle'
-import Header from './components/Header'
+import EachArticle from '../src/app/components/EachArticle'
+import Header from '../src/app/components/Header'
 import '../src/app/globals.css'
 
 
